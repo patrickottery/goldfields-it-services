@@ -33,6 +33,34 @@
       });
   }
 
+  /** Add hover preview (preview-active on hovered item, preview-inactive on others). */
+  function initPreviewHighlight(containerId, itemSelector) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    var items = container.querySelectorAll(itemSelector);
+    function clear() {
+      items.forEach(function(el) { el.classList.remove('preview-active', 'preview-inactive'); });
+    }
+    container.addEventListener('mouseover', function(e) {
+      var t = e.target.closest(itemSelector);
+      if (!t || !container.contains(t)) return;
+      clear();
+      t.classList.add('preview-active');
+      items.forEach(function(el) { if (el !== t) el.classList.add('preview-inactive'); });
+    });
+    container.addEventListener('mouseleave', clear);
+  }
+
+  /** Open services tab from hash (e.g. #business-it). */
+  function initServicesHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    var tab = document.querySelector('#servicesTabs button[data-bs-target="#' + hash + '"]');
+    if (tab && typeof bootstrap !== 'undefined') {
+      bootstrap.Tab.getOrCreateInstance(tab).show();
+    }
+  }
+
   load('navbar-placeholder', 'partials/navbar.html', function() {
     setActiveNav(document.querySelector('.navbar'));
   });
@@ -40,4 +68,8 @@
     var yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
+
+  initPreviewHighlight('hero-buttons', '.btn');
+  initPreviewHighlight('servicesTabs', '.nav-link');
+  initServicesHash();
 })();
