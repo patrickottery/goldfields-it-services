@@ -1,0 +1,465 @@
+/* Goldfields IT Services – Victorian Central Victoria country forest
+   Font: Plus Jakarta Sans. Palette: forest green + warm brown. */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Override Bootstrap */
+  --bs-body-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bs-headings-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bs-primary: #2d5a3d;
+  --bs-primary-rgb: 45, 90, 61;
+  --bs-body-color: #4a4035;
+  --bs-body-bg: #f7f4ef;
+  --bs-headings-color: #2c2419;
+  --bs-border-color: #ddd5c8;
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.375rem;
+  --bs-border-radius-lg: 0.75rem;
+  --bs-link-color: #2d5a3d;
+  --bs-link-hover-color: #1e4629;
+
+  /* Theme tokens – forest & brown */
+  --nav-bg: #2c2419;
+  --nav-text: rgba(247, 244, 239, 0.92);
+  --nav-hover: #7cb87a;
+  --accent: #2d5a3d;
+  --accent-hover: #1e4629;
+  --earth-50: #f7f4ef;
+  --earth-100: #efe9e0;
+  --earth-200: #ddd5c8;
+  --earth-600: #5c5346;
+  --earth-700: #4a4035;
+  --earth-800: #3d3225;
+  --earth-900: #2c2419;
+}
+
+/* Base */
+body {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  padding-top: 56px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--nav-bg) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--nav-text) !important;
+  letter-spacing: -0.02em;
+}
+
+.navbar-brand:hover {
+  color: #fff !important;
+}
+
+.navbar-brand-icon {
+  flex-shrink: 0;
+  color: var(--nav-text);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand:hover .navbar-brand-icon {
+  color: #fff;
+}
+
+.nav-link {
+  color: var(--nav-text) !important;
+  font-weight: 500;
+  padding-inline: 1rem !important;
+  border-radius: var(--bs-border-radius-sm);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-hover) !important;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--earth-900) 0%, #3d3225 45%, #4a4035 100%);
+  color: #fff;
+  padding: 5rem 0 6rem;
+  min-height: 0;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.hero .lead {
+  color: rgba(247, 244, 239, 0.88);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.hero .btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.hero .btn-outline-light {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+.hero .btn-outline-light:hover {
+  color: var(--earth-900) !important;
+  background-color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+  min-height: 60vh;
+}
+
+.bg-light {
+  background-color: var(--earth-100) !important;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+/* Cards – softer, consistent */
+.card {
+  border-radius: var(--bs-border-radius-lg);
+  border: 1px solid var(--earth-200);
+  box-shadow: 0 1px 3px rgba(44, 36, 25, 0.06);
+}
+
+.card-title {
+  font-weight: 600;
+  color: var(--earth-900);
+}
+
+.text-primary {
+  color: var(--accent) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Footer */
+.footer-dark {
+  background-color: var(--nav-bg);
+}
+
+.footer-dark .text-secondary {
+  color: rgba(247, 244, 239, 0.75) !important;
+}
+
+.footer-dark a.text-secondary:hover {
+  color: #fff !important;
+}
+
+.footer-dark h5,
+.footer-dark h6 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  background-color: rgba(28, 22, 15, 0.5);
+}
+
+/* Services tabs (used on services page) */
+#services .nav-tabs {
+  border: none;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#services .nav-tabs .nav-item {
+  margin: 0;
+}
+
+#services .nav-tabs .nav-link {
+  color: var(--accent) !important;
+  background-color: #fff !important;
+  border: 2px solid var(--accent) !important;
+  border-radius: 2rem;
+  padding: 0.6rem 1.25rem;
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s, transform 0.15s;
+}
+
+#services .nav-tabs .nav-link:hover {
+  color: #fff !important;
+  background-color: var(--accent) !important;
+  transform: translateY(-1px);
+}
+
+#services .nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(45, 90, 61, 0.35);
+}
+
+#services .nav-tabs .nav-link.active.preview-inactive {
+  color: var(--accent) !important;
+  background-color: #fff !important;
+  box-shadow: none;
+}
+
+#services .nav-tabs .nav-link.preview-active {
+  color: #fff !important;
+  background-color: var(--accent) !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(45, 90, 61, 0.35);
+}
+
+#services .tab-content {
+  padding-top: 1.5rem;
+}
+
+/* Contact / About – subtle polish */
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.text-muted {
+  color: var(--earth-600) !important;
+}
+
+/* ===== Showcase / portfolio-quality layout ===== */
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--earth-900);
+}
+
+/* Hero – showcase style */
+.hero.hero-showcase {
+  padding: 6rem 0 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero.hero-showcase::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background: linear-gradient(to top, var(--earth-50), transparent);
+  pointer-events: none;
+}
+
+.hero-showcase .hero-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 239, 0.8);
+  margin-bottom: 1rem;
+}
+
+.hero-showcase h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero-showcase .lead {
+  font-size: 1.2rem;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Capability cards – homepage */
+.capability-card {
+  background: #fff;
+  border-radius: var(--bs-border-radius-lg);
+  border: 1px solid var(--earth-200);
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(44, 36, 25, 0.1);
+  border-color: var(--earth-200);
+}
+
+.capability-card .capability-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  background: rgba(45, 90, 61, 0.12);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.capability-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--earth-900);
+}
+
+.capability-card p {
+  font-size: 0.95rem;
+  color: var(--earth-600);
+  margin-bottom: 1rem;
+}
+
+.capability-card .card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.capability-card .card-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Website design highlight block */
+.web-design-showcase {
+  background: linear-gradient(135deg, var(--earth-900) 0%, var(--earth-800) 100%);
+  color: #fff;
+  border-radius: var(--bs-border-radius-lg);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.web-design-showcase::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(45, 90, 61, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.web-design-showcase .section-label {
+  color: var(--nav-hover);
+}
+
+.web-design-showcase .section-title {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.web-design-showcase p {
+  color: rgba(247, 244, 239, 0.88);
+  max-width: 32em;
+  margin-bottom: 1.5rem;
+}
+
+.web-design-showcase .btn-outline-light {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+.web-design-showcase .btn-outline-light:hover {
+  color: var(--earth-900) !important;
+  background: #fff;
+}
+
+/* Feature list with icons */
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-list .feature-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  background: rgba(45, 90, 61, 0.15);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* Services page – 4 tabs */
+#services .nav-tabs .nav-link {
+  font-size: 0.9rem;
+}
+
+/* About page – photo */
+.about-photo-wrap {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% -25px;
+  border-radius: var(--bs-border-radius-lg);
+  border: 3px solid var(--earth-200);
+  box-shadow: 0 8px 24px rgba(44, 36, 25, 0.12);
+}
+
+@media (min-width: 768px) {
+  .hero.hero-showcase {
+    padding: 7rem 0 8rem;
+  }
+}
